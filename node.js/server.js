@@ -12,8 +12,8 @@ const searchWeek = require('./searchWeek');
 app.use(bodyParser.urlencoded({extended: true}))
 app.use(bodyParser.json());
 
-let search_array ={ };
-let find ='';
+let search_array ={};
+
 
 app.post('/insert',function(req,res){
     insert.data(req,res);
@@ -39,4 +39,4 @@ app.listen(3000,function(){
     console.log('Connected 3000 port!');
 });
 
-
+//server.js

@@ -6,19 +6,25 @@ exports.week = function(req,res){
         if(err) {
             console.log(err);
         } else {
-            console.log(rows.insertId);
+            //console.log(rows.insertId);
         }
 
         server.search_array = result;
-        console.log(server.search_array.length);
-        console.log(req.body.search);
+        //console.log(server.search_array.length);
+        //console.log(req.body.search);
+
+        let array = [ ];
+        let json = { };
 
         for(let i = 0; i<server.search_array.length; i++){
-            server.find += server.search_array[i].path+"\n";
+            array[i] = "";
+            array[i] += server.search_array[i].path;
         }
-        console.log(server.find);
-        res.send(server.find);
-        server.find = '';
+        json.photos = array;
+        console.log(json);
+
+        res.send(json);
+
     });
 }
-
+//searchWeek.js
